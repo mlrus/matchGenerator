@@ -1,0 +1,33 @@
+fullText                                                                         ! subText                                                                !   raw |  bias | mixed
+=================================================================================================================================================================================
+[apple, bannana, cherry]                                     ! [cherry]                                           ! 0.500 ! 0.333 ! 0.583
+[apple, bannana, cherry]                                     ! [bannana, cherry]                                  ! 0.500 ! 0.200 ! 0.550
+[apple, bannana, cherry]                                     ! [bannana, cherry]                                  ! 0.500 ! 0.200 ! 0.550
+[apple, bannana, cherry]                                     ! [apple, cherry]                                    ! 0.500 ! 0.333 ! 0.583
+[apple, bannana, cherry]                                     ! [bannana]                                          ! 0.333 ! 0.583 ! 0.528
+[apple, bannana, cherry]                                     ! [apple, bannana]                                   ! 0.333 ! 0.583 ! 0.528
+[apple, bannana, cherry]                                     ! [apple, bannana]                                   ! 0.333 ! 0.583 ! 0.528
+[apple, bannana, cherry]                                     ! [apple]                                            ! 0.200 ! 0.550 ! 0.420
+[apple, bannana, cherry, date]                               ! [cherry, date]                                     ! 1.000 ! 0.333 ! 1.000
+[apple, bannana, cherry, date]                               ! [cherry, date]                                     ! 1.000 ! 0.333 ! 1.000
+[apple, bannana, cherry, date]                               ! [bannana, date]                                    ! 1.000 ! 0.500 ! 1.000
+[apple, bannana, cherry, date]                               ! [bannana, cherry, date]                            ! 1.000 ! 0.200 ! 1.000
+[apple, bannana, cherry, date]                               ! [apple, cherry, date]                              ! 1.000 ! 0.333 ! 1.000
+[apple, bannana, cherry, date]                               ! [apple, bannana, date]                             ! 1.000 ! 0.500 ! 1.000
+[apple, bannana, cherry, date]                               ! [cherry]                                           ! 0.500 ! 1.000 ! 0.750
+[apple, bannana, cherry, date]                               ! [date]                                             ! 0.500 ! 0.500 ! 0.625
+[apple, bannana, cherry, date]                               ! [bannana, cherry]                                  ! 0.500 ! 0.500 ! 0.625
+[apple, bannana, cherry, date]                               ! [bannana, cherry]                                  ! 0.500 ! 0.500 ! 0.625
+[apple, bannana, cherry, date]                               ! [apple, cherry]                                    ! 0.500 ! 1.000 ! 0.750
+[apple, bannana, cherry, date]                               ! [apple, date]                                      ! 0.500 ! 0.625 ! 0.656
+[apple, bannana, cherry, date]                               ! [apple, bannana, cherry]                           ! 0.500 ! 0.625 ! 0.656
+[apple, bannana, cherry, date]                               ! [bannana]                                          ! 0.333 ! 1.000 ! 0.667
+[apple, bannana, cherry, date]                               ! [apple, bannana]                                   ! 0.333 ! 1.000 ! 0.667
+[apple, bannana, cherry, date]                               ! [apple]                                            ! 0.200 ! 1.000 ! 0.600
+[apple, date]                                                ! [apple, date]                                      ! 1.000 ! 0.000 ! 1.000
+[apple, date]                                                ! [date]                                             ! 0.500 ! 0.200 ! 0.550
+[apple, date]                                                ! [apple]                                            ! 0.200 ! 0.550 ! 0.420
+[apple, bannana]                                             ! [bannana]                                          ! 0.333 ! 0.200 ! 0.400
+[apple, bannana]                                             ! [apple, bannana]                                   ! 0.333 ! 0.000 ! 0.333
+[apple, bannana]                                             ! [apple]                                            ! 0.200 ! 0.400 ! 0.360
+

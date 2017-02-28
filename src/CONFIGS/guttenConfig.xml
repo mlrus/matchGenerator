@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>default propertyfile</comment>
+	<entry key="traceLevel">1</entry>
+	<entry key="detailTrace">false</entry>
+	<entry key="debug">false</entry>
+	<entry key="showAsGened">false</entry>
+	<entry key="_unitySuppression">false</entry>
+	<entry key="_nanSuppression">false</entry>
+	<entry key="_showZeros">true</entry>
+	<entry key="_showNonzeros">true</entry>
+	<entry key="unitySuppression">false</entry>
+	<entry key="nanSuppression">false</entry>
+	<entry key="showZeros">true</entry>
+	<entry key="showNonzeros">true</entry>
+	<entry key="showExpansions">false</entry>
+
+	<entry key="ValidateCombination.explain">true</entry>
+	<entry key="ValidateCombination.adjustifShortWords">true</entry>
+	<entry key="ValidateCombination.retentionThresholdMin">1.0</entry>
+	<entry key="ValidateCombination.retentionThresholdMax">1.0</entry>
+
+	<entry key="ValidateCombination.threshold_isaSet">0.95</entry>
+	<entry key="ValidateCombination.threshold_isaInorderSequence">0.9</entry>
+	<entry key="ValidateCombination.threshold_isaSequence">0.8</entry>
+	<entry key="ValidateCombination.threshold_isaExactmatch">1.0</entry>
+
+	<entry key="ValidateCombination.analyzerName">SimpleAnalyzer</entry>
+	<entry key="ValidateCombination.doExtend2">false</entry>
+	<entry key="ValidateCombination.debug">true</entry>
+
+	<entry key="BayesMatches.numPhraseEntropiesToShow">0</entry>
+	<entry key="BayesMatches.numTopEntropies">1</entry>
+	<entry key="BayesMatches.verbose">false</entry>
+
+
+	<entry key="StopperText.additionalStopwords">
+		0,1,2,3,4,5,6,7,8,9,A,Al,B,C,Corp,D,Del,Des,Do,E,F,Fur,G,Group,Grp,H,Hld,Holding,Holdings,Inc,J,K,L,Limited,Ltd,M,N,O,P,Q,R,S,Scrl,T,U,Und,,W,X,Y,Z,a,al,am,an,and,asa,at,b,c,company,corp,corporation,d,de,del,des,do,dr,du,e,en,et,f,for,fur,g,grp,h,,in,inc,incorporated,it,its,is,j,ja,k,l,la,le,ltd,m,my,n,new,o,of,on,or,p,q,r,s,scrl,t,the,to,u,und,und,und,w,x,y,z
+	</entry>
+
+	<!-- <entry key="StopperText.dictionaryFilename">/Users/mlrus/cnc/input/exclusions.txt</entry>  -->
+
+
+	<!-- group -->
+
+	<entry key="cache:DS">documentStore,1024,0.75</entry>
+	<entry key="cache:HC">hitCounter,1024,0.75</entry>
+
+	<!-- ========================================================================= -->
+	<!-- ========================================================================= -->
+	<!-- ========================================================================= -->
+	<!-- ========================================================================= -->
+
+	<!--
+		<entry key="indexNames">US_NAMES,en_US</entry>  
+	-->
+	<entry key="indexNames"></entry>
+
+	<!-- if there is a match to a name, then the resulting output is 0.75 since this reduces the total probability -->
+	<entry key="NVP:Index:US_NAMES">
+		{shortIndexName,US_NAMES}, {serverType,docStore},
+		{columnSpec,0}, {type,negativeExamples}, {min,0.75}, {max,1.0},
+		{indexName,/Users/mlrus/CNC/cnc/INPUTS/USCensusNames.dat}
+	</entry>
+
+	<entry key="NVP:Index:en_US">
+		{shortIndexName,en_US}, {serverType,docStore}, {columnSpec,0},
+		{type,negativeExamples}, {min,0.25}, {max,1.0},
+		{indexName,/Users/mlrus/CNC/cnc/INPUTS/en_US.dictionary}
+	</entry>
+
+	<!-- ========================================================================= -->
+	<!-- ========================================================================= -->
+	<!-- ========================================================================= -->
+	<!-- ========================================================================= -->
+
+	<entry key="maxResultcount">25</entry>
+	<entry key="maxInternalResults">4096</entry>
+	<entry key="iterationThreshold">61</entry>
+	<entry key="alwaysEmitSymbol">false</entry>
+
+</properties>

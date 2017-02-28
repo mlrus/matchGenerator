@@ -1,0 +1,15 @@
+#1.000,apple date,PhraseMatch,book5,apple date
+#1.000,cherry date,PhraseMatch,book1,apple bannana cherry date
+#1.000,bannana date,KeywordMatch,book1,apple bannana cherry date
+#0.750,cherry,KeywordMatch,book1,apple bannana cherry date
+#0.667,bannana,KeywordMatch,book1,apple bannana cherry date
+#0.625,date,KeywordMatch,book1,apple bannana cherry date
+#0.600,apple,KeywordMatch,book1,apple bannana cherry date
+#0.583,cherry,KeywordMatch,book2,apple bannana cherry
+#0.550,date,KeywordMatch,book5,apple date
+#0.528,bannana,KeywordMatch,book2,apple bannana cherry
+#0.500,apple,InorderMatch,book4,apple
+#0.420,apple,KeywordMatch,book2,apple bannana cherry
+#0.420,apple,KeywordMatch,book5,apple date
+#0.400,bannana,KeywordMatch,book3,apple bannana
+#0.360,apple,KeywordMatch,book3,apple bannana

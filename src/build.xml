@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Build, test and benchmark the standalone matcher for evals -->
+<project basedir="." default="build" name="kGen">
+	<property environment="env" />
+	<property name="prjRoot" value="${basedir}" />
+	<property name="libraries" value="${basedir}/../../libraries/lib" />
+	<property name="debuglevel" value="source,lines,vars" />
+	<property name="doc" value="${prjRoot}/doc" />
+	<property name="sourceFiles" value="${prjRoot}" />
+	<property name="classes" value="${prjRoot}/classes" />
+	<property name="lib" value="${prjRoot}/lib" />
+	<property name="sampleData" value="kGen/sampleData/" />
+	<property name="generate" value="bayesMatchGenerator.BayesMatches" />
+	<property name="target=" value="1.5" />
+	<property name="source" value="1.5" />
+	<property name="jvmArg" value="-Xmx760M" />
+	<property name="INPUTDIR" value="INPUTS" />
+        <property name="DSET" value="symtwo" />
+	<property name="INFILE" value="${DSET}.2col" />
+	<property name="OUTPUTDIR" value="OUTPUTS" />
+	<property name="OUTFILE" value="${DSET}.km" />
+	<property name="CONFIGDIR" value="CONFIGS" />
+	<property name="CONFIGFILE" value="guttenConfig.xml" />
+	<property name="OPTIONS" value="-Dexplain=true -DshowAsGened=false -D_showDroppedSequenceSuffixes=false -D_dropSequenceSuffixes=true -DallowIterative=false -D_dropOptionalExactSingletons=true -DtraceLevel=0 -Dsubsume=true" />
+	<property name="ARGSTRING" value="-prop ${CONFIGDIR}/${CONFIGFILE} ${OPTIONS} ${INPUTDIR}/${INFILE} ${OUTPUTDIR}/${OUTFILE}" />
+	<property name="packageHead" value="" />
+
+	<path id="buildpath">
+		<pathelement location="${classes}" />
+		<pathelement location="${libraries}/commons-math-1.2.jar" />
+	</path>
+	<path id="classpath">
+		<pathelement location="${classes}" />
+		<pathelement location="${libraries}/commons-math-1.2.jar" />
+		<pathelement location="${lib}/kGen.jar" />
+	</path>
+	<uptodate property="jarIsUptodate"
+		targetfile="${lib}/kGen.jar">
+		<srcfiles dir="${sourceFiles}" includes="**/*.java" />
+	</uptodate>
+	<target name="init">
+		<tstamp />
+		<mkdir dir="${lib}" />
+		<mkdir dir="${classes}" />
+		<mkdir dir="${OUTPUTDIR}" />
+		<mkdir dir="${OUTPUTDIR}" />
+	</target>
+	<target name="clean">
+		<delete dir="${classes}" />
+		<delete dir="${dist}" />
+		<delete file="${lib}/kGen.jar" />
+	</target>
+	<target depends="clean" name="cleanall">
+		<delete dir="${doc}" />
+	</target>
+	<target depends="init" name="build" unless="jarIsUptodate">
+		<echo message="${ant.project.name}: ${ant.file} " />
+		<echo message="jarIsUptodate: ${jarIsUptodate}" />
+		<echo message="${toString:buildpath}" />
+		<echo message="${lib}" />
+		<javac compiler="modern" optimize="true" debug="true" debuglevel="${debuglevel}"
+			source="${source}" listfiles="false" verbose="true"
+			destdir="${classes}">
+			<src path="${sourceFiles}" />
+			<classpath refid="buildpath" />
+		</javac>
+	</target>
+	<target depends="build" name="jar"
+		description="put classes into jar">
+		<jar destfile="${lib}/kGen.jar">
+			<fileset dir="${classes}" includes="**/*.class" />
+			<fileset dir="${lib}" excludes="**/kGen.jar" />
+			<fileset dir="${sourceFiles}" includes="**/*.java" />
+			<fileset dir="${sourceFiles}" includes="**/*.xml" />
+			<fileset dir="${prjRoot}/." includes="build.xml" />
+		</jar>
+	</target>
+	<target depends="jar" name="zip" description="put source and jar into zip">
+		<zip destfile="${lib}/kGen.zip">
+			<fileset dir="${lib}" includes="**/kGen.jar" />
+			<fileset dir="${sourceFiles}" includes="**/*.java" />
+			<fileset dir="${sourceFiles}" includes="**/*.xml" />
+		</zip>
+	</target>
+	<target name="javadoc">
+		<javadoc access="private" author="true"
+			classpath="lib/keymatch.jar;lib/commons-math-1.1.jar" destdir="doc"
+			doctitle="Kgenn" nodeprecated="false"
+			nodeprecatedlist="false" noindex="false" nonavbar="false"
+			notree="false"
+			packagenames="util.data,util.count,util,docStore,matchGenerators.comboQueries,match,Interfaces,util.coll,keywordMatcher,generators,matchGenerators.BayesMatchGenerator,util.index"
+			source="1.5" sourcepath="src" splitindex="true" use="true"
+			version="true" />
+	</target>
+
+
+    <target name="Gen">
+        <echo message="bayesMatchGenerator.BayesMatches" />
+        <java classname="${packageHead}${generate}" failonerror="true" fork="yes">
+            <jvmarg line="${jvmArg}" />
+            <arg line="${ARGSTRING}" />
+            <classpath refid="classpath" />
+        </java>
+    </target>
+
+
+
+</project>
+
