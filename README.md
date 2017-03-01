@@ -1,6 +1,6 @@
 # Match Generator
 
-Generate keymatches from a file of labels and text. The generated results provide the keymatch definitions for ``trieMATCHER``.
+Generate keymatches from a file of labels and text. The generated results provide the keymatch definitions for ``trieMATCHER``. The precomputed naïve Bayes probabilities will be aggregated by the matcher. 
 
 ## Sample Input
 ```
