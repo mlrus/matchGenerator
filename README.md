@@ -2,7 +2,8 @@
 
 Generate keymatches from a file of labels and text. The generated results provide the keymatch definitions for ``trieMATCHER``. The precomputed naïve Bayes probabilities will be aggregated by the matcher. 
 
-## Sample Input
+## Example
+### Input
 ```
 ...
 book://guten/item10023,the day of days an extravaganza
@@ -19,7 +20,7 @@ book://guten/item10055,the descent of man and other stories
 ...
 ```
 
-## Sample Output
+### Output
 ```
 ...
 #0.600,death,KeywordMatch,book://guten/item10034,the death of balder
@@ -32,7 +33,7 @@ book://guten/item10055,the descent of man and other stories
 ...
 ```
 
-## Usage
+### Invocation
 ```
 java -cp src/lib/kGen.jar -DshowAsGened=false -DshowZeros=false -Dexplain=false bayesMatchGenerator/BayesMatches src/INPUTS/input.2col /tmp/bayesMatches.output.km > /tmp/output.log 2> /tmp/trace.log 
 ```
